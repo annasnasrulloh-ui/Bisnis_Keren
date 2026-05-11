@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Creative Portfolio</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="baut-2.css" />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  </head>
+  <body>
+    <div class="cursor"></div>
+    <header>
+      <div class="logo">CreativeX</div>
+
+      <nav>
+        <a href="#home"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="#work"><i class="fa-solid fa-briefcase"></i> Work</a>
+        <a href="#contact"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </nav>
+
+      <div class="toggle" onclick="toggleMode()">
+        <i class="fa-solid fa-moon"></i>
+      </div>
+    </header>
+
+    <section id="home" class="hero">
+      <div class="hero-text">
+        <h1>We Build <span>Digital Magic</span></h1>
+        <p>Modern creative agency crafting beautiful digital experiences.</p>
+        <a href="#work" class="btn">Explore Work</a>
+      </div>
+
+      <div class="hero-visual">
+        <div class="circle1"></div>
+        <div class="circle2"></div>
+      </div>
+    </section>
+
+    <section class="services">
+      <div class="card">
+        <h3>Product Design</h3>
+        <p>Clean and modern UI/UX focused on user experience.</p>
+      </div>
+
+      <div class="card">
+        <h3>Brand Identity</h3>
+        <p>Strong branding that elevates your digital presence.</p>
+      </div>
+
+      <div class="card">
+        <h3>Development</h3>
+        <p>High-performance websites built with modern tech.</p>
+      </div>
+    </section>
+
+    <section id="work" class="portfolio reveal">
+      <h2>Latest Projects</h2>
+
+      <div class="filter-buttons">
+        <button onclick="filterSelection('all')">All</button>
+        <button onclick="filterSelection('web')">Web</button>
+        <button onclick="filterSelection('design')">Design</button>
+        <button onclick="filterSelection('app')">App</button>
+      </div>
+
+      <div class="gallery">
+        <div class="project web">
+          <img src="https://picsum.photos/500/300?1" alt="" />
+        </div>
+
+        <div class="project design">
+          <img src="https://picsum.photos/500/300?2" alt="" />
+        </div>
+
+        <div class="project app">
+          <img src="https://picsum.photos/500/300?3" alt="" />
+        </div>
+
+        <div class="project web" onclick="openProject('project1.html')">
+          <img src="https://picsum.photos/500/300?1" />
+        </div>
+
+        <div class="project design">
+          <img src="https://picsum.photos/500/300?2" />
+          <div class="project-info">
+            <h3>Creative Design</h3>
+            <p>UI/UX Design</p>
+          </div>
+        </div>
+
+        <div class="project app">
+          <img src="https://picsum.photos/500/300?3" />
+          <div class="project-info">
+            <h3>Mobile App</h3>
+            <p>Application Design</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <div class="contact-left">
+        <h2>Let’s Work Together</h2>
+        <p>Have a project in mind? Let’s build something amazing together.</p>
+      </div>
+
+      <form id="contact-form" class="contact-form" onsubmit="sendEmail(event)">
+        <input type="text" id="name" placeholder="Your Name" required />
+
+        <input type="email" id="email" placeholder="Your Email" required />
+
+        <textarea id="message" placeholder="Your Message" required></textarea>
+
+        <button class="btn" id="sendBtn">Send Message</button>
+      </form>
+    </section>
+
+    <footer>© 2026 CreativeX Agency</footer>
+
+    <script>
+      function toggleMode() {
+        document.body.classList.toggle("dark");
+      }
+    </script>
+    <div id="imagePopup" class="popup">
+      <span class="close">&times;</span>
+      <img id="popupImg" />
+    </div>
+
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+
+        <img id="modalImg" />
+
+        <h3 id="modalTitle"></h3>
+
+        <p id="modalDesc"></p>
+      </div>
+    </div>
+    <script src="baut.js"></script>
+  </body>
+</html>
